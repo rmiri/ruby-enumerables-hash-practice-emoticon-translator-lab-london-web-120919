@@ -15,7 +15,7 @@ result
 
 end
 
-def get_japanese_emoticon(source = './lib/emoticons.yml', emoticon)
+def get_japanese_emoticon(source , emoticon)
   # code goes here
  #  calls on #load_library and gives it the argument of the file path (FAILED - 1) ------ load_library(yamlFile)
  # returns the Japanese equivalent of an English grinning (FAILED - 2)
