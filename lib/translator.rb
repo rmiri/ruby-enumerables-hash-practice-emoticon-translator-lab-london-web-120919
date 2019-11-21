@@ -38,7 +38,7 @@ end
 
 end
 
-def get_english_meaning(source = './lib/emoticons.yml', emoticon)
+def get_english_meaning(source, emoticon)
   # code goes here
   library = load_library(source)
   if library["get_meaning"].include?(emoticon)
