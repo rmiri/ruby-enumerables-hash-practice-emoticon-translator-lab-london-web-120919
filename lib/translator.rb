@@ -7,15 +7,15 @@ library = YAML.load_file("./lib/emoticons.yml")
 
 result = { 'get_meaning' => {}, 'get_emoticon' => {} }
 
-library.each { |english,emoticons| # 0 is in english and 1 is in japanese
-  result["get_meaning"][emoticons[1]] = english
-  result["get_emoticon"][emoticons[0]] = emoticons[1]
+library.each { |english,(en_emoticon,jap_emoticon)| # 0 is in english and 1 is in japanese
+  result["get_meaning"][jap_emoticon] = english
+  result["get_emoticon"][en_emoticon] = jap_emoticon
 }
 result
 
 end
 
-def get_japanese_emoticon(source = './lib/emoticons.yml', emoticon)
+def get_japanese_emoticon(source , emoticon)
   # code goes here
  #  calls on #load_library and gives it the argument of the file path (FAILED - 1) ------ load_library(yamlFile)
  # returns the Japanese equivalent of an English grinning (FAILED - 2)
@@ -38,7 +38,7 @@ end
 
 end
 
-def get_english_meaning(source = './lib/emoticons.yml', emoticon)
+def get_english_meaning(source, emoticon)
   # code goes here
   library = load_library(source)
   if library["get_meaning"].include?(emoticon)
