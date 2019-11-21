@@ -9,7 +9,7 @@ result = { 'get_meaning' => {}, 'get_emoticon' => {} }
 
 library.each { |english,(en_emoticon,jap_emoticon)| # 0 is in english and 1 is in japanese
   result["get_meaning"][jap_emoticon] = english
-  result["get_emoticon"][emoticons[0]] = emoticons[1]
+  result["get_emoticon"][en_emoticon] = jap_emoticon
 }
 result
 
